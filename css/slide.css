@@ -23,7 +23,7 @@
     overflow: hidden;
     margin: 0;
     padding: 0;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 .slick-list:focus
@@ -112,9 +112,10 @@
     border: 1px solid transparent;
 }
 .slider.slick-initialized.slick-slider {
-    border: 1px solid #00adee;
-    overflow: hidden;
+    /* overflow: visible; */
     margin-bottom: 25px;
+    height: 421px;
+    overflow: hidden;
 }
 
 
@@ -125,27 +126,34 @@
 
 
 /**/
+.slider_clients.slick-initialized.slick-slider {
+    width: 95%;
+    margin: 0 auto 25px;
+}
 .slick-next.our_clients_nav.slick-nav--next.slick-arrow {
     width: 16px;
     height: 30px;
     background-image: url(../img/right.png);
     position: absolute;
-    right: 0;
-    top: 13px;
+    right: -25px;
+    top: 30%;
+	z-index: 99
 }
 
-.slick-prev.our_clients_nav.slick-nav--prev.slick-arrow{
+.slick-prev.our_clients_nav.slick-nav--prev.slick-arrow {
     width: 16px;
     height: 30px;
     background-image: url(../img/left.png);
     position: absolute;
-    left: 0;
-    top: 13px;
+    left: -25px;
+    top: 30%;
+    z-index: 99;
 }
 .our_clients_nav:hover{
     cursor: pointer;
 }
 
 .slider_partners.slick-initialized.slick-slider {
-    margin-bottom: 25px;
+    width: 95%;
+    margin: 0 auto 25px;
 }
