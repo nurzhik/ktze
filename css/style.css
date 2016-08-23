@@ -1368,7 +1368,7 @@ background-image: url(../img/zhd_m.png);
     margin: 0 auto;
     text-align: center;
 }
-.online-zaiavka__form___item label {
+.online-zaiavka__form___item___label {
     width: 50%;
     display: inline-block;
     text-align: right;
@@ -1406,6 +1406,59 @@ background-image: url(../img/zhd_m.png);
     padding: 0;
     line-height: 30px;
     text-indent: 10px;
+}
+.calc.zaiavka {
+	clear:both;
+    line-height: 32px;
+    width: 345px;
+    box-sizing: border-box;
+}
+.calc.zaiavka:before {
+    background-image: url(../img/titel_zaiav.png);
+    background-size: cover;
+}
+.online-zaiavka__form___item____input--checkbox_label{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    line-height: 20px;
+    font-size: 13px;
+}
+.online-zaiavka__form___item____input--checkbox_label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background-color: #fff;
+    /* box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8); */
+    border: 1px solid #038ebc;
+}
+.online-zaiavka__form___item____input--checkbox{
+    display: none;
+}
+.online-zaiavka__form___item____input--checkbox:checked + .online-zaiavka__form___item____input--checkbox_label:before {
+    content: "\2713";
+    font-size: 15px;
+    color: #038ebc;
+    font-weight: bold;
+    text-align: center;
+    line-height: 15px;
+}
+.online-zaiavka__form___item--checkbox_container {
+    width: 48%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 @media screen and (max-width: 968px){
     .cr{
@@ -1499,6 +1552,12 @@ background-image: url(../img/zhd_m.png);
     margin-bottom: 5px;
     width: 100%;
 }
+.online-zaiavka__form___item--checkbox_container {
+    width: 100%;
+}
+.online-zaiavka__form___item .online-zaiavka__form___item____input--checkbox_label{
+    width: auto;
+}
 .online-zaiavka__form___item {
     margin-bottom: 20px;
 }
@@ -1508,6 +1567,7 @@ background-image: url(../img/zhd_m.png);
 .online-zaiavka__form___item label br {
     display: none;
 }
+
 }
 @media screen and (max-width: 500px){
     .logo img {
