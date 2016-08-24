@@ -1458,7 +1458,8 @@ background-image: url(../img/zhd_m.png);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 @media screen and (max-width: 968px){
     .cr{

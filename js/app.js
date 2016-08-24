@@ -1,3 +1,50 @@
+// Зададим стартовую дату
+jQuery(document).ready(function() {
+    var start = new Date(),
+        prevDay,
+        startHours = 00;
+
+    // 09:00
+    start.setHours(00);
+    start.setMinutes(0);
+
+    // Если сегодня суббота или воскресенье - 10:00
+    // if ([6,0].indexOf(start.getDay()) != -1) {
+    //     start.setHours(10);
+    //     startHours = 10
+    // }
+
+    $('#timepicker-actions-exmpl').datepicker({
+        timepicker: true,
+        startDate: start,
+        minHours: startHours,
+        maxHours: 23,
+        onSelect: function(fd, d, picker) {
+            // Ничего не делаем если выделение было снято
+            if (!d) return;
+
+            var day = d.getDay();
+
+            // Обновляем состояние календаря только если была изменена дата
+            if (prevDay != undefined && prevDay == day) return;
+            prevDay = day;
+
+            // Если выбранный день суббота или воскресенье, то устанавливаем
+            // часы для выходных, в противном случае восстанавливаем начальные значения
+            if (day == 6 || day == 0) {
+                picker.update({
+                    minHours: 0,
+                    maxHours: 23
+                })
+            } else {
+                picker.update({
+                    minHours: 0,
+                    maxHours: 23
+                })
+            }
+        }
+    })
+        })
 jQuery(document).ready(function() { // Р·Р°РїСѓСЃРєР°РµРј СЃРєСЂРёРїС‚ РїРѕСЃР»Рµ Р·Р°РіСЂСѓР·РєРё РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ
     /* Р·Р°СЃСѓРЅРµРј СЃСЂР°Р·Сѓ РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РІ РїРµСЂРµРјРµРЅРЅС‹Рµ, С‡С‚РѕР±С‹ СЃРєСЂРёРїС‚Сѓ РЅРµ РїСЂРёС…РѕРґРёР»РѕСЃСЊ РёС… РєР°Р¶РґС‹Р№ СЂР°Р· РёСЃРєР°С‚СЊ РїСЂРё РєР»РёРєР°С… */
     var overlay = $('#overlay'); // РїРѕРґР»РѕР¶РєР°, РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РѕРґРЅР° РЅР° СЃС‚СЂР°РЅРёС†Рµ
